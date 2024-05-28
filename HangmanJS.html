@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Hangman List</title>
+        <script>
+            // This function will run when the form is submitted
+            function addItem(event) {
+                event.preventDefault(); // Prevent the default form submit behavior
+        
+                // Get the value from the input field
+                var itemText = document.getElementById("itemInput").value;
+        
+                // Create a new li element
+                var newItem = document.createElement("li");
+                newItem.textContent = itemText;
+
+                // Append the new item to the list
+                document.getElementById("hangmanWords").appendChild(newItem);
+        
+                // Clear the input field for the next input
+                document.getElementById("hangmanWords").value = "";
+            }
+        </script>
+    </head>
+<body>
+
+    <h1>Add an Item to the List</h1>
+    <!-- Create a form with a text input and a submit button -->
+    <form onSubmit="addItem(event)">
+        <input type="text" id="itemInput" required>
+        <button type="submit">Add Item</button>
+    </form>
+
+    <ol id="hangmanWords">
+        <li value="dragon">dragon</li>
+        <li value="starfish">starfish</li>
+        <li value="icosathlon">icosathlon</li>
+        <li value="climbing">climbing</li>
+        <li value="corndog">corndog</li>
+        <li value="chocolate">chocolate</li>
+        <li value="feta">feta</li>
+        <li value="tornado">tornado</li>
+        <li value="photosynthesis">photosynthesis</li>
+    </ol>
+</body>
+</html>
